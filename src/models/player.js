@@ -4,17 +4,17 @@ const { Schema, model } = require("mongoose");
 
 const PlayerSchema = new Schema(
     {
-        _id:Number,
       fullName: String,
       firstName: String,
       lastName: String,
       position: String,
-      teamId: Number,
-      teamName: String,
-      
+      teamId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Team'},
     },
     { collection: "players", timestamps: false }
   );
+ 
  
 
 module.exports = model("Player", PlayerSchema);

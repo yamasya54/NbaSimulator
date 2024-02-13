@@ -4,14 +4,16 @@ const { Schema, model } = require("mongoose");
 
 const TeamSchema = new Schema(
   {
-    _id:Number,
+    
+    fullName: String,
+    name: String,
     abbreviation: String,
     city: String,
     conference: String,
     division: String,
-    full_name: String,
-    name: String,
-
+    players: [{ 
+      type: Schema.Types.ObjectId,
+       ref: 'Player' }]
     
   },
   { collection: "teams", timestamps: false }

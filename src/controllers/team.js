@@ -7,7 +7,7 @@ module.exports = {
     // Filters:
     let filters = {};
 
-    const data = await res.getModelList(Team, filters);
+    const data = await res.getModelList(Team, filters,['players']);
 
     res.status(200).send({
       error: false,
